@@ -29,15 +29,15 @@ Le projet est divisé en 10 rôles spécifiques pour assurer la livraison du TP 
   * [text_sections/justification_graine.md](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/text_sections/justification_graine.md) (justification mathématique et logique de l'algorithme).
 * **Graine obtenue** : `853155114` (à utiliser par le Membre 3 pour la génération).
 
-### 🗃️ BLOC 2 : Architecte de Données — Modélisation du Jeu de Données
-* **Membre responsable** : Membre 2
+### 🗃️ BLOC 2 : Architecte de Données — Modélisation du Jeu de Données (Fait ✅)
+* **Membre responsable** : Membre 2 (MAMBOUNE NCHOURUPOUO BASMA)
 * **Outils** : Spécifications théoriques (Texte/Markdown).
 * **Mission** : Définir la plausibilité et la structure des variables du dataset pour le Thème B :
   * **Variable 1** : Score de performance (de 0 à 100).
   * **Variable 2** : TJM (Tarif Journalier Moyen de 100€ à 950€).
   * **Étiquette** : Classification commerciale subjective (Premium / Standard).
   * Justifier la taille de l'échantillon ($N = 250$ freelances) pour les tests.
-* **Livrable** : Spécification des plages de valeurs et justification rédigée pour le rapport.
+* **Livrables produits** : [text_sections/m2_justification.md](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/text_sections/m2_justification.md) (spécification des plages de valeurs et justification rédigée).
 * **À envoyer à** : Membre 3 (pour coder le générateur) et Membre 10 (pour intégration au rapport).
 
 ### 💻 BLOC 3 : Développeur Data — Pipeline de Génération & Export
@@ -118,6 +118,7 @@ INF232_TP_GROUPE01/
 │   └── q4_matrix.png             <-- Graphique de classification du Membre 7 (à venir)
 ├── text_sections/
 │   ├── justification_graine.md   <-- Justification de la graine du Membre 1 (Fait ✅)
+│   ├── m2_justification.md       <-- Justification de la modélisation du Membre 2 (Fait ✅)
 │   └── ...                       <-- Sections rédigées par les autres membres (à venir)
 ├── README.md                     <-- Ce fichier de coordination et notice (Fait ✅)
 └── Rapport.pdf                   <-- Rapport PDF final assemblé par le Membre 10 (à venir)
