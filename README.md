@@ -40,11 +40,11 @@ Le projet est divisé en 10 rôles spécifiques pour assurer la livraison du TP 
 * **Livrables produits** : [text_sections/m2_justification.md](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/text_sections/m2_justification.md) (spécification des plages de valeurs et justification rédigée).
 * **À envoyer à** : Membre 3 (pour coder le générateur) et Membre 10 (pour intégration au rapport).
 
-### 💻 BLOC 3 : Développeur Data — Pipeline de Génération & Export
-* **Membre responsable** : Membre 3
+### 💻 BLOC 3 : Développeur Data — Pipeline de Génération & Export (Fait ✅)
+* **Membre responsable** : Membre 3 (MELI TANGA JEEPS PARVEL)
 * **Outils** : Python, bibliothèque `numpy` (fixer `np.random.seed(853155114)`).
 * **Mission** : Coder le script de génération de données déterministe à partir de la structure définie par le Membre 2 et de la graine du Membre 1.
-* **Livrable** : Script `src/generate_data.py`, fichier `data/freelances_data.csv`, et tableau des 10 premières lignes pour le rapport.
+* **Livrables produits** : [src/generate_data.py](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/src/generate_data.py) (script de génération) et [data/freelances_data.csv](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/data/freelances_data.csv) (jeu de données généré).
 * **À envoyer à** : Membres 4, 5, 6, 7 (qui ont besoin du CSV), Membre 9 (pour l'application) et Membre 10 (pour le rapport).
 
 ### 📊 BLOC 4 : Analyste Statistique — Question 1 (Statistique Univariée)
@@ -102,10 +102,10 @@ Le projet est divisé en 10 rôles spécifiques pour assurer la livraison du TP 
 ```text
 INF232_TP_GROUPE01/
 ├── data/
-│   └── freelances_data.csv       <-- Généré par le Membre 3 (à venir)
+│   └── freelances_data.csv       <-- Généré par le Membre 3 (Fait ✅)
 ├── src/
 │   ├── graine.py                 <-- Code du Membre 1 (Fait ✅)
-│   ├── generate_data.py          <-- Code du Membre 3 (à venir)
+│   ├── generate_data.py          <-- Code du Membre 3 (Fait ✅)
 │   ├── analysis_q1.py            <-- Code du Membre 4 (à venir)
 │   ├── analysis_q2.py            <-- Code du Membre 5 (à venir)
 │   ├── analysis_q3.py            <-- Code du Membre 6 (à venir)
