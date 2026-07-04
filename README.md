@@ -1,4 +1,4 @@
-# INF232 — Projet d'Analyse de Données & Statistique (Groupe 01)
+# INF232 — Projet d'Analyse de Données & Statistique (Groupe 14)
 ## Thème B : Plateforme de mise en relation freelance/client
 
 Ce dépôt contient le projet d'analyse statistique et de classification pour le cours **INF232**. Il est structuré pour permettre une collaboration fluide entre les 10 membres du groupe.
