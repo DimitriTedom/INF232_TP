@@ -1,27 +1,75 @@
-# INF232 — Projet d'Analyse de Données & Statistique (Groupe 01)
+# INF232 — Projet d'Analyse de Données & Statistique (Groupe 14)
 ## Thème B : Plateforme de mise en relation freelance/client
 
 Ce dépôt contient le projet d'analyse statistique et de classification pour le cours **INF232**. Il est structuré pour permettre une collaboration fluide entre les 10 membres du groupe.
 
 ---
 
-## 🚀 Mode d'emploi (Exécution rapide)
+## 🚀 Installation et test de l'application (Groupe 14)
 
-Pour lancer l'application Streamlit unifiée en local :
+### Prérequis
+- Python 3.10+
+- Git (pour cloner le dépôt)
 
-```bash
+### Installation
+
+```powershell
+# 1. Cloner ou se placer dans le dossier du projet
+cd "C:\Users\Dimitri SnowDev\Documents\TP 232\INF232_TP_GROUPE01"
+
+# 2. Installer les dépendances
 pip install numpy pandas matplotlib seaborn scikit-learn streamlit
-python src/generate_data.py          # (si data/ absent)
-python src/analysis_q1.py
-python src/analysis_q2.py
-python src/analysis_q3.py
-python src/analysis_q4.py
+
+# 3. Générer les données (si le fichier n'existe pas encore)
+python src/generate_data.py
+```
+
+### Lancement de l'application
+
+```powershell
 streamlit run src/app.py
 ```
 
-L'interface interactive est disponible dans votre navigateur à l'adresse : http://localhost:8501
+L'application s'ouvrira automatiquement dans votre navigateur à l'adresse :
 
-L'app affiche les PNG officiels si présents dans `assets/`, sinon génère les graphiques automatiquement (même logique que les scripts analysis).
+**http://localhost:8501**
+
+Si le port 8501 est occupé, vous pouvez utiliser un autre port :
+```powershell
+streamlit run src/app.py --server.port 8502
+```
+
+### Vérification / Test de l'application
+
+Une fois l'app ouverte (http://localhost:8501), vérifiez les éléments suivants :
+
+1. **Onglet 🏠 Introduction**
+   - Bannière avec le nombre de freelances (250)
+   - 4 cartes de métriques (TJM moyen, Performance moyenne, Part Premium, Nombre de freelances)
+   - Tableau des 10 premières lignes des données
+
+2. **Onglet 📈 Statistique Descriptive (Q1 - Membre 4)**
+   - Cartes : Moyenne ≈ 52.80, Médiane ≈ 53.00, Variance, Écart-type
+   - Graphique : Boîte à moustaches du score de performance
+
+3. **Onglet 📉 Régression (Q2 - Membre 5)**
+   - Corrélations Pearson et Spearman
+   - Graphique : Nuage de points + droite de régression (R² affiché)
+
+4. **Onglet 🧩 Clustering (Q3 - Membre 6)**
+   - Graphique des clusters K-Means (K=2 recommandé)
+   - Légende avec effectifs par cluster
+
+5. **Onglet 🎯 Classification (Q4 - Membre 7)**
+   - Matrice de confusion
+   - Accuracy ≈ 73.02% et Recall (Premium) ≈ 68.18% dans le titre du graphique
+
+**Notes importantes :**
+- Si les images `.png` dans `assets/` sont absentes, l'app les régénère automatiquement (vous verrez un badge "généré automatiquement").
+- La sidebar affiche la graine utilisée : `853155114`
+- Tous les calculs sont reproductibles grâce à la graine fixe.
+
+L'application a été réalisée par le **Groupe 14** (dossier et dépôt officiels).
 
 ---
 

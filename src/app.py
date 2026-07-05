@@ -34,12 +34,13 @@ from sklearn.preprocessing import StandardScaler
 
 # ---------------------------------------------------------------------------
 # 0. DESIGN TOKENS (palette, typographie) — design pro pour investisseurs
+#    Note: App is now forced to light mode only (no dark sidebar/theme).
 # ---------------------------------------------------------------------------
 COULEUR_CANVAS = "#F5F7FA"
 COULEUR_CARTE = "#FFFFFF"
 COULEUR_BORDURE = "#E4E7EC"
 COULEUR_ENCRE = "#101828"
-COULEUR_TEXTE_ATTENUE = "#64748B"
+COULEUR_TEXTE_ATTENUE = "#475569"  # kept for reference (not heavily used since light-only forcing)
 COULEUR_MARQUE = "#0F6B62"
 
 ACCENT_Q1 = "#0F6B62"  # teal   — Statistique descriptive
@@ -76,27 +77,66 @@ def injecter_css() -> None:
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-        html, body, [class*="css"] {{
-            font-family: {POLICE_TEXTE};
-            color: {COULEUR_ENCRE};
+        /* ============================================================
+           LIGHT MODE ONLY - FORCED
+           The app now forces light theme everywhere.
+           - Main & Sidebar: light background (#F5F7FA or close)
+           - All text: dark (#101828)
+           - Hero (teal bg): white text (kept)
+           - No dark mode at all. Overrides user's Streamlit theme.
+           ============================================================ */
+
+        /* Force light background on the entire app (light only) */
+        .stApp,
+        .stMain,
+        [data-testid="stMain"],
+        .main,
+        .block-container {{
+            background-color: {COULEUR_CANVAS} !important;
         }}
-        .stApp {{
-            background-color: {COULEUR_CANVAS};
-        }}
-        h1, h2, h3 {{
-            font-family: {POLICE_TITRE} !important;
-            letter-spacing: -0.01em;
-        }}
+        /* Sidebar slightly different light shade for visual separation, but still light + dark text */
         [data-testid="stSidebar"] {{
-            background-color: {COULEUR_ENCRE};
-        }}
-        [data-testid="stSidebar"] * {{
-            color: #E4E7EC !important;
-        }}
-        [data-testid="stSidebar"] hr {{
-            border-color: #2A3441;
+            background-color: #F1F5F9 !important;
         }}
 
+        /* Force dark text everywhere (black on light bg) */
+        .stApp,
+        .stApp *,
+        .stMain *,
+        .main *,
+        .block-container *,
+        [data-testid="stSidebar"],
+        [data-testid="stSidebar"] *,
+        .stMarkdown,
+        .stMarkdown *,
+        .stText,
+        .stCaption,
+        [data-testid="stCaptionContainer"],
+        .stExpander,
+        .stInfo,
+        .stWarning,
+        .stSuccess,
+        .stError,
+        h1, h2, h3, h4, h5, h6,
+        p, span, div, li, label, a {{
+            color: {COULEUR_ENCRE} !important;
+        }}
+
+        /* Captions and secondary text - dark and readable on light */
+        .stCaption,
+        [data-testid="stCaptionContainer"] *,
+        .stMarkdown small {{
+            color: #334155 !important;
+            opacity: 1 !important;
+        }}
+
+        /* Expander headers */
+        [data-testid="stExpander"] summary {{
+            color: {COULEUR_ENCRE} !important;
+            font-weight: 600 !important;
+        }}
+
+        /* Tabs */
         button[data-baseweb="tab"] {{
             font-family: {POLICE_TITRE};
             font-weight: 600;
@@ -109,9 +149,10 @@ def injecter_css() -> None:
             background-color: {COULEUR_MARQUE} !important;
         }}
 
+        /* Metric cards - light bg, dark text */
         .carte-metrique {{
-            background: {COULEUR_CARTE};
-            border: 1px solid {COULEUR_BORDURE};
+            background: {COULEUR_CARTE} !important;
+            border: 1px solid {COULEUR_BORDURE} !important;
             border-radius: 10px;
             padding: 14px 18px;
             height: 100%;
@@ -119,7 +160,7 @@ def injecter_css() -> None:
         .carte-metrique .label {{
             font-family: {POLICE_DONNEES};
             font-size: 11.5px;
-            color: {COULEUR_TEXTE_ATTENUE};
+            color: #334155 !important;
             text-transform: uppercase;
             letter-spacing: 0.06em;
         }}
@@ -127,20 +168,28 @@ def injecter_css() -> None:
             font-family: {POLICE_TITRE};
             font-size: 26px;
             font-weight: 600;
-            color: {COULEUR_ENCRE};
+            color: {COULEUR_ENCRE} !important;
             margin-top: 2px;
         }}
 
+        /* Generated badge - dark text on light */
         .badge-genere {{
             display: inline-block;
             font-family: {POLICE_DONNEES};
             font-size: 11.5px;
-            color: {COULEUR_TEXTE_ATTENUE};
+            color: #1e2937 !important;
             background: {COULEUR_CANVAS};
             border: 1px solid {COULEUR_BORDURE};
             border-radius: 6px;
             padding: 3px 9px;
             margin-top: 6px;
+        }}
+
+        /* Headers */
+        h1, h2, h3 {{
+            font-family: {POLICE_TITRE} !important;
+            letter-spacing: -0.01em;
+            color: {COULEUR_ENCRE} !important;
         }}
         </style>
         """,
@@ -343,10 +392,10 @@ injecter_css()
 with st.sidebar:
     st.markdown(
         f"""
-        <div style="font-family:{POLICE_TITRE}; font-size:21px; font-weight:700; color:white;">
+        <div style="font-family:{POLICE_TITRE}; font-size:21px; font-weight:700; color:{COULEUR_ENCRE};">
             💼 Freelance Analytics
         </div>
-        <div style="font-family:{POLICE_TEXTE}; font-size:13px; color:#9AA4B2; margin-top:2px;">
+        <div style="font-family:{POLICE_TEXTE}; font-size:13px; color:#475569; margin-top:2px;">
             INF232 — Statistiques et Analyse de Données
         </div>
         """,
@@ -361,13 +410,13 @@ with st.sidebar:
     st.markdown("**🔑 Reproductibilité**")
     st.markdown(
         f'<span style="font-family:{POLICE_DONNEES}; font-size:12.5px; '
-        f'background:#1C2530; border:1px solid #2A3441; border-radius:6px; '
-        f'padding:4px 8px; color:#7ee787;">graine = {SEED_GROUPE}</span>',
+        f'background:#E0E7FF; border:1px solid {COULEUR_MARQUE}; border-radius:6px; '
+        f'padding:4px 8px; color:{COULEUR_ENCRE};">graine = {SEED_GROUPE}</span>',
         unsafe_allow_html=True,
     )
 
     st.markdown("---")
-    st.markdown("**👥 Groupe 01 — Thème B**")
+    st.markdown("**👥 Groupe 14 — Thème B**")
     st.caption("M1 Dimitri Tedom · M2 Mamboune Nchourupouo Basma · M3 Meli Tanga Jeeps Parvel · M4 Ngono Danielle Stephanie Estelle · M5 Kuichouo Leopold Stanislas · M6 Lambo Lekoubou Dimitri · M7 Tekeng Kamwélé Junior Cambell · M8 Nguefah zeutcha Carol junior · M9 Nkonzap Ariane · M10 Yonkoua Yann Luca")
 
 # ---------------------------------------------------------------------------
@@ -391,12 +440,12 @@ with onglet_intro:
         f"""
         <div style="background: linear-gradient(135deg, {COULEUR_MARQUE} 0%, #0B4941 100%);
                     border-radius: 14px; padding: 34px 38px; margin-bottom: 22px;">
-            <div style="font-family:{POLICE_DONNEES}; font-size:12.5px; color:#BFE3DB;
-                        text-transform:uppercase; letter-spacing:0.08em;">Groupe 01 · Thème B</div>
+            <div style="font-family:{POLICE_DONNEES}; font-size:12.5px; color:white;
+                        text-transform:uppercase; letter-spacing:0.08em; opacity:0.9;">Groupe 14 · Thème B</div>
             <div style="font-family:{POLICE_TITRE}; font-size:38px; font-weight:700; color:white; margin-top:6px;">
                 {n_freelances} freelances analysés
             </div>
-            <div style="font-family:{POLICE_TEXTE}; font-size:15px; color:#D7ECE7; margin-top:8px; max-width:640px;">
+            <div style="font-family:{POLICE_TEXTE}; font-size:15px; color:white; margin-top:8px; max-width:640px; opacity:0.95;">
                 Plateforme freelance/client — TJM, score de performance et statut commercial (Premium / Standard),
                 explorés sous quatre angles statistiques complémentaires.
             </div>
@@ -490,6 +539,6 @@ with onglet_q4:
 # ---------------------------------------------------------------------------
 st.markdown("---")
 st.caption(
-    "INF232 — Groupe 01 · Thème B (Plateforme Freelance/Client) · "
+    "INF232 — Groupe 14 · Thème B (Plateforme Freelance/Client) · "
     "Application intégrée (M8 UI + M9 packaging) · Bloc 7 Classification complété"
 )
