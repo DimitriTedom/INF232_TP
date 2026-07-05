@@ -67,36 +67,36 @@ Le projet est divisé en 10 rôles spécifiques pour assurer la livraison du TP 
 * **À envoyer à** : Membre 8 (UI), Membre 9 (App) et Membre 10 (Rapport).
 
 ### 🔍 BLOC 6 : Analyste Data Science — Question 3 (Clustering non supervisé) (Fait ✅)
-* **Membre responsable** : Membre 6
+* **Membre responsable** : Membre 6 (LAMBO LEKOUBOU DIMITRI)
 * **Outils** : Python (`scikit-learn` pour KMeans, `matplotlib`).
 * **Mission** : Segmenter les freelances sans utiliser le label historique. Standardiser les données au préalable. Justifier le nombre optimal de groupes (Elbow + Silhouette). Dresser le profil commercial de chaque groupe.
 * **Livrables produits** : `src/analysis_q3.py`, `assets/q3_clusters.png`, `text_sections/q3_analysis.md`.
 * **À envoyer à** : Membre 8 (UI), Membre 9 (App) et Membre 10 (Rapport).
 
 ### 🤖 BLOC 7 : Analyste Data Science — Question 4 (Classification supervisée) (Fait ✅)
-* **Membre responsable** : Membre 7
+* **Membre responsable** : Membre 7 (TEKENG KAMWÉLÉ JUNIOR CAMBELL)
 * **Outils** : Python (`scikit-learn` : LogisticRegression + StandardScaler + train_test_split).
 * **Mission** : Entraîner un classifieur pour prédire Premium/Standard. Matrice de confusion, accuracy, recall (Premium). Évaluer risques business (FP = dilution marque ; FN = opportunités ratées).
 * **Livrables produits** : `src/analysis_q4.py`, `assets/q4_matrix.png`, `text_sections/q4_analysis.md`.
 * **À envoyer à** : Membre 8 (UI), Membre 9 (App) et Membre 10 (Rapport).
 
 ### 🎨 BLOC 8 : Développeur Front / UI — Visualisation & Interface Web (Fait ✅)
-* **Membre responsable** : Membre 8 (Nguefah zeutcha Carol junio)
+* **Membre responsable** : Membre 8 (Nguefah zeutcha Carol junior)
 * **Outils** : Python + Streamlit (design tokens, onglets par question, fallback génération auto).
 * **Mission** : Maquette UI complète en onglets + design pro (couleurs par section, cartes métriques, reproductibilité visible).
 * **Livrable** : UI intégrée dans `src/app.py` (maquette fournie + packaging).
 
 ### 🛠️ BLOC 9 : Intégrateur Dev — Packaging Application & Exécution (Fait ✅)
-* **Membre responsable** : Membre 9
-* **Outils** : Python, Streamlit.
-* **Mission** : Fusionner UI du M8 avec analyses 4-7 + données. Rendre `src/app.py` exécutable.
-* **Livrable** : `src/app.py` fonctionnel avec tous les onglets et graphiques (PNG officiels ou fallback auto).
+* **Membre responsable** : Membre 9 (NKONZAP ARIANE)
+* **Outils** : Python, Streamlit, Git.
+* **Mission** : Fusionner l'interface du Membre 8 avec les codes de calcul et de visualisation des Membres 3, 4, 5, 6, 7 dans `src/app.py`. Rédiger un README d'exécution et tester le bon fonctionnement local.
+* **Livrable** : `src/app.py` fonctionnel avec tous les onglets et graphiques.
 
 ### ✍️ BLOC 10 : Éditeur en Chef — Assemblage & Compilation du Rapport
-* **Membre responsable** : Membre 10 (Éditeur final)
-* **Outils** : LaTeX, Google Docs ou Word (Export au format final **PDF**).
-* **Mission** : Collecter l'ensemble des textes, équations et figures produits par les membres 1, 2, 4, 5, 6, 7. Rédiger l'introduction, la phrase obligatoire justifiant l'utilisation de Python pour ce TP, et assembler le document complet "Rapport". Récupérer les codes sources du Membre 9. Fusionner le tout dans un dossier nommé **`INF232_TP_GROUPE01`**, compresser en `.zip` et soumettre le livrable final sur Google Form avant l'heure limite (**Dimanche 23h59**).
-* **Livrable** : Fichier PDF final `Rapport.pdf` à la racine et dépôt de l'archive ZIP.
+* **Membre responsable** : Membre 10 (YONKOUA YANN LUCA)
+* **Outils** : LaTeX, Google Docs ou Word, PDF.
+* **Mission** : Collecter les parties textuelles rédigées, les équations et les graphiques de tous les membres. Rédiger l'introduction générale, inclure la justification obligatoire de l'usage de Python. Compiler en Rapport.pdf, structurer le dossier final du groupe et effectuer le dépôt avant 23h59.
+* **Livrable** : Rapport.pdf à la racine et dépôt du ZIP final.
 
 ---
 

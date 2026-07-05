@@ -368,7 +368,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("**👥 Groupe 01 — Thème B**")
-    st.caption("M1 Coordination · M2 Modélisation · M3 Génération · M4 Q1 · M5 Q2 · M6 Q3 · M7 Q4 · M8 UI · M9 Intégration · M10 Rapport")
+    st.caption("M1 Dimitri Tedom · M2 Mamboune Nchourupouo Basma · M3 Meli Tanga Jeeps Parvel · M4 Ngono Danielle Stephanie Estelle · M5 Kuichouo Leopold Stanislas · M6 Lambo Lekoubou Dimitri · M7 Tekeng Kamwélé Junior Cambell · M8 Nguefah zeutcha Carol junior · M9 Nkonzap Ariane · M10 Yonkoua Yann Luca")
 
 # ---------------------------------------------------------------------------
 # 6. DATA
