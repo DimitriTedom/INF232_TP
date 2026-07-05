@@ -2,16 +2,18 @@
 # Mission : Classification non supervisée (Clustering K-Means) pour segmenter les freelances.
 # Livrable : Doit exporter 'assets/q3_clusters.png'.
 
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import KMeans
+"""
+BLOC 6 — Clustering K-Means non supervisé
+Graine : 853155114
+"""
 
-# TODO: Implémenter le clustering non supervisé ici
+import pathlib
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
@@ -25,7 +27,13 @@ rng_state = SEED  # utilise comme random_state pour KMeans (reproductibilite)
 # ---------------------------------------------------------------------------
 # 1. CHARGEMENT DES DONNEES (livrable du Membre 3)
 # ---------------------------------------------------------------------------
-DATA_PATH = "data/freelances_data.csv"
+BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
+DATA_PATH = BASE_DIR / "data" / "freelances_data.csv"
+ASSETS_DIR = BASE_DIR / "assets"
+TEXT_DIR = BASE_DIR / "text_sections"
+ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+TEXT_DIR.mkdir(parents=True, exist_ok=True)
+
 df = pd.read_csv(DATA_PATH)
 
 # Variables utilisees pour le clustering : uniquement les variables numeriques
@@ -129,7 +137,7 @@ axes[2].legend(fontsize=8)
 axes[2].grid(alpha=0.3)
 
 plt.tight_layout()
-plt.savefig("assets/q3_clusters.png", dpi=150)
+plt.savefig(ASSETS_DIR / "q3_clusters.png", dpi=150, bbox_inches="tight")
 plt.close()
 
 # ---------------------------------------------------------------------------
@@ -200,7 +208,7 @@ proche de la segmentation commerciale existante :
   peuvent influencer la position des centroides.
 """
 
-with open("text_sections/q3_analysis.md", "w", encoding="utf-8") as f:
+with open(TEXT_DIR / "q3_analysis.md", "w", encoding="utf-8") as f:
     f.write(texte)
 
 # ---------------------------------------------------------------------------
@@ -211,4 +219,4 @@ print("\nProfil des clusters :")
 print(profil.to_string())
 print("\nRepartition Premium/Standard par cluster :")
 print(repartition_statut.to_string())
-print("\nFichiers generes : assets/q3_clusters.png, text_sections/q3_analysis.md")
+print(f"\nFichiers generes : {ASSETS_DIR / 'q3_clusters.png'}, {TEXT_DIR / 'q3_analysis.md'}")

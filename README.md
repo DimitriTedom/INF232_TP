@@ -1,4 +1,4 @@
-# INF232 — Projet d'Analyse de Données & Statistique (Groupe 14)
+# INF232 — Projet d'Analyse de Données & Statistique (Groupe 01)
 ## Thème B : Plateforme de mise en relation freelance/client
 
 Ce dépôt contient le projet d'analyse statistique et de classification pour le cours **INF232**. Il est structuré pour permettre une collaboration fluide entre les 10 membres du groupe.
@@ -7,12 +7,17 @@ Ce dépôt contient le projet d'analyse statistique et de classification pour le
 
 ## 🚀 Mode d'emploi (Exécution rapide)
 
-Pour installer les dépendances et exécuter l'application interactive Streamlit, lancez les commandes suivantes dans votre terminal :
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn streamlit
-python src/generate_data.py
+python src/generate_data.py          # (si data/ absent)
+python src/analysis_q1.py            # optionnel : régénère assets
+python src/analysis_q2.py
+python src/analysis_q3.py
+python src/analysis_q4.py            # Bloc 7 complété
 streamlit run src/app.py
 ```
+
+L'app affiche les PNG officiels si présents dans `assets/`, sinon génère les graphiques automatiquement (même logique que les scripts analysis).
 
 ---
 
@@ -61,33 +66,31 @@ Le projet est divisé en 10 rôles spécifiques pour assurer la livraison du TP 
 * **Livrables produits** : [src/analysis_q2.py](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/src/analysis_q2.py) (code de régression), [assets/q2_regression.png](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/assets/q2_regression.png) (graphique de régression) et [text_sections/q2_analysis.md](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/text_sections/q2_analysis.md) (rapport d'analyse rédigé).
 * **À envoyer à** : Membre 8 (UI), Membre 9 (App) et Membre 10 (Rapport).
 
-### 🔍 BLOC 6 : Analyste Data Science — Question 3 (Clustering non supervisé)
+### 🔍 BLOC 6 : Analyste Data Science — Question 3 (Clustering non supervisé) (Fait ✅)
 * **Membre responsable** : Membre 6
-* **Outils** : Python (`scikit-learn` pour KMeans ou CAH, `matplotlib`).
-* **Mission** : Segmenter les freelances sans utiliser le label historique. Standardiser les données au préalable. Justifier le nombre optimal de groupes (Elbow method et/ou Silhouette score). Dresser le profil commercial de chaque groupe découvert et discuter des limites de l'algorithme.
-* **Livrable** : Code de clustering, graphiques de sélection et de visualisation des classes (`assets/q3_clusters.png`), et rapport textuel des profils.
+* **Outils** : Python (`scikit-learn` pour KMeans, `matplotlib`).
+* **Mission** : Segmenter les freelances sans utiliser le label historique. Standardiser les données au préalable. Justifier le nombre optimal de groupes (Elbow + Silhouette). Dresser le profil commercial de chaque groupe.
+* **Livrables produits** : `src/analysis_q3.py`, `assets/q3_clusters.png`, `text_sections/q3_analysis.md`.
 * **À envoyer à** : Membre 8 (UI), Membre 9 (App) et Membre 10 (Rapport).
 
-### 🤖 BLOC 7 : Analyste Data Science — Question 4 (Classification supervisée)
+### 🤖 BLOC 7 : Analyste Data Science — Question 4 (Classification supervisée) (Fait ✅)
 * **Membre responsable** : Membre 7
-* **Outils** : Python (`scikit-learn` pour la Régression Logistique ou l'Arbre de décision).
-* **Mission** : Entraîner un classifieur supervisé pour prédire l'étiquette Premium/Standard. Calculer la matrice de confusion, l'accuracy, la précision et la sensibilité (recall). Expliquer à la fondatrice les risques et coûts commerciaux des faux positifs (dilution de la marque) et des faux négatifs (départ de bons freelances).
-* **Livrable** : Code d'entraînement, graphique de la matrice de confusion (`assets/q4_matrix.png`), et analyse textuelle d'évaluation des risques business.
+* **Outils** : Python (`scikit-learn` : LogisticRegression + StandardScaler + train_test_split).
+* **Mission** : Entraîner un classifieur pour prédire Premium/Standard. Matrice de confusion, accuracy, recall (Premium). Évaluer risques business (FP = dilution marque ; FN = opportunités ratées).
+* **Livrables produits** : `src/analysis_q4.py`, `assets/q4_matrix.png`, `text_sections/q4_analysis.md`.
 * **À envoyer à** : Membre 8 (UI), Membre 9 (App) et Membre 10 (Rapport).
 
-### 🎨 BLOC 8 : Développeur Front / UI — Visualisation & Interface Web
-* **Membre responsable** : Membre 8
-* **Outils** : Python, framework `streamlit` pour une interface Web interactive et moderne.
-* **Mission** : Créer l'interface utilisateur de l'application. Organiser les affichages par onglets ou pages pour présenter de manière fluide les résultats et les visualisations interactives.
-* **Livrable** : Le fichier d'interface `src/app_ui.py` avec un design premium et structuré.
-* **À envoyer à** : Membre 9 (pour l'intégration).
+### 🎨 BLOC 8 : Développeur Front / UI — Visualisation & Interface Web (Fait ✅)
+* **Membre responsable** : Membre 8 (Nguefah zeutcha Carol junio)
+* **Outils** : Python + Streamlit (design tokens, onglets par question, fallback génération auto).
+* **Mission** : Maquette UI complète en onglets + design pro (couleurs par section, cartes métriques, reproductibilité visible).
+* **Livrable** : UI intégrée dans `src/app.py` (maquette fournie + packaging).
 
-### 🛠️ BLOC 9 : Intégrateur Dev — Packaging Application & Exécution
+### 🛠️ BLOC 9 : Intégrateur Dev — Packaging Application & Exécution (Fait ✅)
 * **Membre responsable** : Membre 9
-* **Outils** : Python, gestion d'environnement virtuel.
-* **Mission** : Assembler le code de génération de données (M3), des analyses mathématiques (M4, M5, M6, M7) et de l'interface Streamlit (M8) dans un script final unifié (`src/app.py`). S'assurer de l'intégration correcte du fichier de données CSV.
-* **Livrable** : Fichier final d'application `src/app.py` testé et sans bogues, prêt à être exécuté.
-* **À envoyer à** : Membre 10 (pour packaging final).
+* **Outils** : Python, Streamlit.
+* **Mission** : Fusionner UI du M8 avec analyses 4-7 + données. Rendre `src/app.py` exécutable.
+* **Livrable** : `src/app.py` fonctionnel avec tous les onglets et graphiques (PNG officiels ou fallback auto).
 
 ### ✍️ BLOC 10 : Éditeur en Chef — Assemblage & Compilation du Rapport
 * **Membre responsable** : Membre 10 (Éditeur final)
@@ -106,21 +109,23 @@ INF232_TP_GROUPE01/
 ├── src/
 │   ├── graine.py                 <-- Code du Membre 1 (Fait ✅)
 │   ├── generate_data.py          <-- Code du Membre 3 (Fait ✅)
-│   ├── analysis_q1.py            <-- Code du Membre 4 (à venir)
+│   ├── analysis_q1.py            <-- Code du Membre 4 (Fait ✅)
 │   ├── analysis_q2.py            <-- Code du Membre 5 (Fait ✅)
-│   ├── analysis_q3.py            <-- Code du Membre 6 (à venir)
-│   ├── analysis_q4.py            <-- Code du Membre 7 (à venir)
-│   └── app.py                    <-- Code d'intégration final Streamlit (M9 - à venir)
+│   ├── analysis_q3.py            <-- Code du Membre 6 (Fait ✅)
+│   ├── analysis_q4.py            <-- Code du Membre 7 (Fait ✅)
+│   └── app.py                    <-- Interface Streamlit intégrée (M8/M9 - Fait ✅)
 ├── assets/
-│   ├── q1_boxplot.png            <-- Graphique de performance du Membre 4 (à venir)
-│   ├── q2_regression.png         <-- Graphique de régression du Membre 5 (Fait ✅)
-│   ├── q3_clusters.png           <-- Graphique de clustering du Membre 6 (à venir)
-│   └── q4_matrix.png             <-- Graphique de classification du Membre 7 (à venir)
+│   ├── q1_boxplot.png            <-- Graphique du Membre 4 (Fait ✅)
+│   ├── q2_regression.png         <-- Graphique du Membre 5 (Fait ✅)
+│   ├── q3_clusters.png           <-- Graphique du Membre 6 (Fait ✅)
+│   └── q4_matrix.png             <-- Graphique du Membre 7 (Fait ✅)
 ├── text_sections/
 │   ├── justification_graine.md   <-- Justification de la graine du Membre 1 (Fait ✅)
 │   ├── m2_justification.md       <-- Justification de la modélisation du Membre 2 (Fait ✅)
-│   ├── q2_analysis.md            <-- Analyse de la régression du Membre 5 (Fait ✅)
-│   └── ...                       <-- Sections rédigées par les autres membres (à venir)
+│   ├── q1_analysis.md            <-- Analyse Membre 4 (Fait ✅)
+│   ├── q2_analysis.md            <-- Analyse Membre 5 (Fait ✅)
+│   ├── q3_analysis.md            <-- Analyse Membre 6 (Fait ✅)
+│   └── q4_analysis.md            <-- Analyse Membre 7 (Fait ✅)
 ├── README.md                     <-- Ce fichier de coordination et notice (Fait ✅)
 └── Rapport.pdf                   <-- Rapport PDF final assemblé par le Membre 10 (à venir)
 ```
