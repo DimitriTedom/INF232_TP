@@ -7,15 +7,19 @@ Ce dépôt contient le projet d'analyse statistique et de classification pour le
 
 ## 🚀 Mode d'emploi (Exécution rapide)
 
+Pour lancer l'application Streamlit unifiée en local :
+
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn streamlit
 python src/generate_data.py          # (si data/ absent)
-python src/analysis_q1.py            # optionnel : régénère assets
+python src/analysis_q1.py
 python src/analysis_q2.py
 python src/analysis_q3.py
-python src/analysis_q4.py            # Bloc 7 complété
+python src/analysis_q4.py
 streamlit run src/app.py
 ```
+
+L'interface interactive est disponible dans votre navigateur à l'adresse : http://localhost:8501
 
 L'app affiche les PNG officiels si présents dans `assets/`, sinon génère les graphiques automatiquement (même logique que les scripts analysis).
 
@@ -23,7 +27,7 @@ L'app affiche les PNG officiels si présents dans `assets/`, sinon génère les 
 
 ## 👥 Coordination du Groupe & Répartition des Tâches (10 Blocs)
 
-Le projet est divisé en 10 rôles spécifiques pour assurer la livraison du TP dans les délais.
+Le projet est divisé en 10 rôles spécifiques pour assurer la livraison du TP dans les délais. (Noms mis à jour selon Guide_Collaboration_INF232_Definitif.pdf)
 
 ### 📦 BLOC 1 : Chef de Projet — Graine & Coordination (Fait ✅)
 * **Membre responsable** : Membre 1 (Chef de groupe : Dimitri Tedom)
@@ -129,3 +133,4 @@ INF232_TP_GROUPE01/
 ├── README.md                     <-- Ce fichier de coordination et notice (Fait ✅)
 └── Rapport.pdf                   <-- Rapport PDF final assemblé par le Membre 10 (à venir)
 ```
+
