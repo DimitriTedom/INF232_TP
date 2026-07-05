@@ -54,11 +54,11 @@ Le projet est divisé en 10 rôles spécifiques pour assurer la livraison du TP 
 * **Livrable** : Code de calcul, graphique boîte à moustaches (`assets/q1_boxplot.png`), et rapport textuel rédigé.
 * **À envoyer à** : Membre 8 (UI), Membre 9 (App) et Membre 10 (Rapport).
 
-### 📈 BLOC 5 : Analyste Statistique — Question 2 (Régression Bivariée)
-* **Membre responsable** : Membre 5
+### 📈 BLOC 5 : Analyste Statistique — Question 2 (Régression Bivariée) (Fait ✅)
+* **Membre responsable** : Membre 5 (KUICHOUO LEOPOLD Stanislas)
 * **Outils** : Python (`scipy.stats` ou `scikit-learn`, `seaborn`).
 * **Mission** : Modéliser la relation entre la performance et le TJM. Calculer les corrélations de Pearson et Spearman. Calculer l'équation de la droite de régression linéaire simple ($y = ax + b$). Calculer le $R^2$ et évaluer la viabilité et les limites de la prédiction de performance à partir du TJM.
-* **Livrable** : Code de régression, graphique nuage de points + droite de régression (`assets/q2_regression.png`), et rapport d'analyse.
+* **Livrables produits** : [src/analysis_q2.py](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/src/analysis_q2.py) (code de régression), [assets/q2_regression.png](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/assets/q2_regression.png) (graphique de régression) et [text_sections/q2_analysis.md](file:///C:/Users/Dimitri%20SnowDev/Documents/TP%20232/INF232_TP_GROUPE01/text_sections/q2_analysis.md) (rapport d'analyse rédigé).
 * **À envoyer à** : Membre 8 (UI), Membre 9 (App) et Membre 10 (Rapport).
 
 ### 🔍 BLOC 6 : Analyste Data Science — Question 3 (Clustering non supervisé)
@@ -107,18 +107,19 @@ INF232_TP_GROUPE01/
 │   ├── graine.py                 <-- Code du Membre 1 (Fait ✅)
 │   ├── generate_data.py          <-- Code du Membre 3 (Fait ✅)
 │   ├── analysis_q1.py            <-- Code du Membre 4 (à venir)
-│   ├── analysis_q2.py            <-- Code du Membre 5 (à venir)
+│   ├── analysis_q2.py            <-- Code du Membre 5 (Fait ✅)
 │   ├── analysis_q3.py            <-- Code du Membre 6 (à venir)
 │   ├── analysis_q4.py            <-- Code du Membre 7 (à venir)
 │   └── app.py                    <-- Code d'intégration final Streamlit (M9 - à venir)
 ├── assets/
 │   ├── q1_boxplot.png            <-- Graphique de performance du Membre 4 (à venir)
-│   ├── q2_regression.png         <-- Graphique de régression du Membre 5 (à venir)
+│   ├── q2_regression.png         <-- Graphique de régression du Membre 5 (Fait ✅)
 │   ├── q3_clusters.png           <-- Graphique de clustering du Membre 6 (à venir)
 │   └── q4_matrix.png             <-- Graphique de classification du Membre 7 (à venir)
 ├── text_sections/
 │   ├── justification_graine.md   <-- Justification de la graine du Membre 1 (Fait ✅)
 │   ├── m2_justification.md       <-- Justification de la modélisation du Membre 2 (Fait ✅)
+│   ├── q2_analysis.md            <-- Analyse de la régression du Membre 5 (Fait ✅)
 │   └── ...                       <-- Sections rédigées par les autres membres (à venir)
 ├── README.md                     <-- Ce fichier de coordination et notice (Fait ✅)
 └── Rapport.pdf                   <-- Rapport PDF final assemblé par le Membre 10 (à venir)
