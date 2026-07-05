@@ -48,7 +48,7 @@ Le projet est divisé en 10 rôles spécifiques pour assurer la livraison du TP 
 * **À envoyer à** : Membres 4, 5, 6, 7 (qui ont besoin du CSV), Membre 9 (pour l'application) et Membre 10 (pour le rapport).
 
 ### 📊 BLOC 4 : Analyste Statistique — Question 1 (Statistique Univariée)
-* **Membre responsable** : Membre 4
+* **Membre responsable** : Membre 4 (NGONO DANIELLE STEPHANIE ESTELLE)
 * **Outils** : Python (`pandas`, `matplotlib`, `seaborn`).
 * **Mission** : Analyser la distribution de la performance des freelances. Calculer la moyenne, médiane, variance, écart-type. Détecter les valeurs aberrantes (outliers) par la méthode IQR de Tukey. Rédiger la vulgarisation pour les investisseurs et les limites des données.
 * **Livrable** : Code de calcul, graphique boîte à moustaches (`assets/q1_boxplot.png`), et rapport textuel rédigé.
